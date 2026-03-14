@@ -1,0 +1,128 @@
+/* Column Styles */
+.column {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  max-height: calc(100vh - 200px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+body.dark-theme .column {
+  background-color: #2d2d2d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.column:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .column:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Column Header */
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e6ed;
+}
+
+body.dark-theme .column-header {
+  border-bottom-color: #404040;
+}
+
+.column-header h2 {
+  font-size: 1.1rem;
+  margin: 0;
+  flex: 1;
+}
+
+.task-count {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Column Content */
+.column-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 0.5rem;
+}
+
+/* Scrollbar for column content */
+.column-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.column-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.column-content::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 3px;
+}
+
+body.dark-theme .column-content::-webkit-scrollbar-thumb {
+  background: #404040;
+}
+
+.column-content::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #95a5a6;
+  font-style: italic;
+  border: 2px dashed #e0e6ed;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+body.dark-theme .empty-state {
+  border-color: #404040;
+  background-color: #1e1e1e;
+  color: #7f8c8d;
+}
+
+/* Drag and Drop Effects */
+.column {
+  min-height: 100px;
+}
+
+.column:hover {
+  background-color: rgba(102, 126, 234, 0.02);
+}
+
+body.dark-theme .column:hover {
+  background-color: rgba(102, 126, 234, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .column {
+    max-height: none;
+  }
+
+  .column-content {
+    max-height: 400px;
+  }
+}
